@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Text Speed-->
+    <TextView
+        android:id="@+id/textSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sliderSpeed"
+        app:layout_constraintEnd_toStartOf="@+id/textMaxSpeed"
+        app:layout_constraintStart_toStartOf="@+id/sliderSpeed" />
+    <TextView
+        android:id="@+id/textMinSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/min_speed"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderSpeed"
+        app:layout_constraintEnd_toStartOf="@+id/sliderSpeed"
+        app:layout_constraintTop_toTopOf="@+id/sliderSpeed" />
+
+    <TextView
+        android:id="@+id/textMaxSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/max_speed"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderSpeed"
+        app:layout_constraintStart_toEndOf="@+id/sliderSpeed"
+        app:layout_constraintTop_toTopOf="@+id/sliderSpeed" />
+
+    <!--Slider Speed-->
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderSpeed"
+        android:layout_width="280dp"
+        android:layout_height="34dp"
+        android:stepSize="1"
+        android:value="1"
+        android:valueFrom="1"
+        android:valueTo="5"
+        app:layout_constraintBottom_toTopOf="@+id/btnRotateRight"
+        app:layout_constraintEnd_toStartOf="@+id/btnForward"
+        app:layout_constraintStart_toEndOf="@+id/btnDribble"
+        android:layout_marginBottom="50dp"/>
+
+    <!--IP Input-->
+    <EditText
+        android:id="@+id/addressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textNoSuggestions"
+        android:text="@string/default_ip"
+        app:layout_constraintEnd_toEndOf="@+id/btnConnect"
+        app:layout_constraintStart_toStartOf="@+id/btnConnect"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!--Connect Button-->
+
+    <!--Driver Button-->
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connect to IP Address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressText"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btnForward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrow_button"
+        android:rotation="-90"
+        android:src="@drawable/arrow_black_foreground"
+        app:layout_constraintBottom_toTopOf="@+id/btnBackward"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btnBackward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrow_button"
+        android:rotation="90"
+        android:src="@drawable/arrow_black_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btnLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/arrow_button"
+        android:rotation="180"
+        android:src="@drawable/arrow_black_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrow_button"
+        android:rotation="0"
+        android:src="@drawable/arrow_black_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnLeft"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"/>
+
+    <!--Kicker Button-->
+    <ImageButton
+        android:id="@+id/btnRotateLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-90"
+        android:scaleY="-1"
+        android:src="@mipmap/rotate"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRight"
+        app:layout_constraintEnd_toStartOf="@+id/textSpeed"
+        android:layout_marginRight="-30dp"/>
+
+    <ImageButton
+        android:id="@+id/btnRotateRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-90"
+        android:src="@mipmap/rotate"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRotateLeft"
+        app:layout_constraintStart_toEndOf="@+id/textSpeed"
+        android:layout_marginLeft="-30dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnKick"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_kick_selector"
+        android:text="@string/kick"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLeft"
+        app:layout_constraintEnd_toEndOf="@+id/btnLeft"
+        app:layout_constraintStart_toStartOf="@+id/btnLeft" />
+
+    <!--Dribbler Button-->
+    <androidx.appcompat.widget.AppCompatToggleButton
+        android:id="@+id/btnDribble"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/button_dribble_selector"
+        android:text="@string/dribble"
+        android:textColor="@color/white"
+        android:textOff="@string/dribble_off"
+        android:textOn="@string/dribble_on"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRight"
+        app:layout_constraintEnd_toEndOf="@+id/btnRight"
+        app:layout_constraintStart_toStartOf="@+id/btnRight"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

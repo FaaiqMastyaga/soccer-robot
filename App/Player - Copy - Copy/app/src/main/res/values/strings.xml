@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Player</string>
+    <string name="speed">Speed: 1</string>
+    <string name="min_speed">1</string>
+    <string name="max_speed">5</string>
+    <string name="kick">KICK</string>
+    <string name="dribble">DRIBBLE</string>
+    <string name="dribble_on">DRIBBLE\nON</string>
+    <string name="dribble_off">DRIBBLE\nOFF</string>
+
+    <string name="default_ip">192.168.4.1</string>
+</resources>
